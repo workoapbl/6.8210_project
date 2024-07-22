@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="obstacle">
+  <link name="obstacle">
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="REPLACE_IXX" ixy="0" ixz="0" iyy="REPLACE_IYY" iyz="0" izz="REPLACE_IZZ"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 REPLACE_HALF_LENGTH"/>
+      <geometry>
+        <cylinder radius="REPLACE_RADIUS" length="REPLACE_LENGTH"/>
+      </geometry>
+      <material name="red">
+      	<color rgba="1 0 0 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 REPLACE_HALF_LENGTH"/>
+      <geometry>
+        <cylinder radius="REPLACE_RADIUS" length="REPLACE_LENGTH"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="weld" type="fixed">
+    <parent link="ground" />
+    <child link="obstacle" />
+  </joint>
+  
+</robot>
